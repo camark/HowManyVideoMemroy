@@ -2,38 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dist.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri App</title>
+    <title>How Much Video Memory</title>
     <script type="module" src="/main.js" defer></script>
   </head>
 
   <body>
     <main class="container">
-      <h1>Welcome to Tauri</h1>
+      <h1>🎮 How Much Video Memory?</h1>
+      <p class="subtitle">AI Model VRAM Calculator</p>
 
-      <div class="row">
-        <a href="https://tauri.app" target="_blank">
-          <img src="/assets/tauri.svg" class="logo tauri" alt="Tauri logo" />
-        </a>
-        <a
-          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-          target="_blank"
-        >
-          <img
-            src="/assets/javascript.svg"
-            class="logo vanilla"
-            alt="JavaScript logo"
-          />
-        </a>
-      </div>
-      <p>Click on the Tauri logo to learn more about the framework</p>
-
-      <form class="row" id="greet-form">
-        <input id="greet-input" placeholder="Enter a name..." />
-        <button type="submit">Greet</button>
+      <form class="row" id="vram-form">
+        <input id="model-input" placeholder="Enter model name (e.g., llama-3-8b)..." />
+        <button type="submit">Calculate</button>
       </form>
-      <p id="greet-msg"></p>
+
+      <div id="results" class="results-container">
+        <p id="result-msg"></p>
+        <div id="vram-details" class="hidden">
+          <div class="card">
+            <h2 id="model-name"></h2>
+            <div class="vram-grid">
+              <div class="vram-item">
+                <span class="label">FP16 (Base)</span>
+                <span class="value" id="fp16-value"></span>
+              </div>
+              <div class="vram-item">
+                <span class="label">FP32</span>
+                <span class="value" id="fp32-value"></span>
+              </div>
+              <div class="vram-item">
+                <span class="label">INT8</span>
+                <span class="value" id="int8-value"></span>
+              </div>
+              <div class="vram-item">
+                <span class="label">INT4</span>
+                <span class="value" id="int4-value"></span>
+              </div>
+              <div class="vram-item">
+                <span class="label">FP16 + KV Cache</span>
+                <span class="value" id="kv-cache-value"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>

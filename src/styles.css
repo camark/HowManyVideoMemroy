@@ -1,15 +1,6 @@
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #ffe21c);
-}
+@import "tailwindcss";
+
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: #0f0f0f;
-  background-color: #f6f6f6;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -17,13 +8,72 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body {
+  @apply bg-gray-50 text-gray-900 dark:bg-gray-800 dark:text-gray-100;
+}
+
 .container {
-  margin: 0;
-  padding-top: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  @apply max-w-xl mx-auto pt-12 pb-20 px-6;
+}
+
+.subtitle {
+  @apply text-gray-500 dark:text-gray-400 text-lg mb-8;
+}
+
+.results-container {
+  @apply mt-10 w-full;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-700 rounded-2xl p-6 shadow-lg text-left;
+}
+
+.vram-grid {
+  @apply grid grid-cols-2 gap-4 mt-4;
+}
+
+.vram-item {
+  @apply flex justify-between items-center p-3 bg-gray-100 dark:bg-gray-600 rounded-lg;
+}
+
+.vram-item .label {
+  @apply font-medium text-gray-600 dark:text-gray-300;
+}
+
+.vram-item .value {
+  @apply font-bold text-cyan-500;
+}
+
+.hidden {
+  display: none;
+}
+
+#result-msg {
+  @apply mt-4 text-lg;
+}
+
+.error {
+  @apply text-red-500;
+}
+
+.success {
+  @apply text-green-500;
+}
+
+#vram-form {
+  @apply flex gap-3 justify-center;
+}
+
+#model-input {
+  @apply flex-1 max-w-xs px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-400;
+}
+
+#vram-form button {
+  @apply px-6 py-3 rounded-lg bg-cyan-500 text-white font-medium hover:bg-cyan-600 active:bg-cyan-700 transition-colors;
+}
+
+h1 {
+  @apply text-3xl font-bold mb-2;
 }
 
 .logo {

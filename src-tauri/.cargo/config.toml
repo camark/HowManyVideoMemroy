@@ -1,0 +1,3 @@
+# 使用官方 sparse 协议（最快，无需镜像）
+[registries.crates-io]
+protocol = "sparse"
